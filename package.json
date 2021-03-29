@@ -1,0 +1,17 @@
+{
+  "name": "fs-feed",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "node server/index.js",
+    "client": "node start-client.js"
+  },
+  "devDependencies": {
+    "concurrently": "^6.0.0"
+  }
+}
