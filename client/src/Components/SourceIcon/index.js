@@ -4,19 +4,25 @@ import styled from 'styled-components'
 const SourceIcon = ({ source, className }) => {
   return (
     <div className={className}>
-      <img
-        className='source-logo'
-        src={`${source === 'twitter' ? '/twitterLogo.png' : '/logo192.png'}`}
-        alt='social feed'
-      />
+      <div className='img-container'>
+        <img
+          className='source-logo'
+          src={`${source === 'twitter' ? '/twitterLogo.png' : '/logo192.png'}`}
+          alt='social feed'
+        />
+      </div>
     </div>
   )
 }
 
 const StyledSourceIcon = styled(SourceIcon)`
-  border-radius: 30px;
-  height: 20px;
-  width: 20px;
+  flex: 1;
+  div.img-container {
+    border-radius: 30px;
+    height: 20px;
+    width: 20px;
+    float: right;
+  }
   img.source-logo {
     height: 100%;
   }
