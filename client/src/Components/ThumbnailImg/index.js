@@ -10,7 +10,7 @@ const ThumbnailImg = ({ className, imgSource }) => {
 }
 
 const StyledThumbnailImg = styled(ThumbnailImg)`
-  height: 128px;
+  height: 139px;
   display: flex;
   justify-content: center;
   align-items: center;

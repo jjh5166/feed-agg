@@ -3,14 +3,19 @@ import styled from 'styled-components'
 
 import TimeStamp from '../TimeStamp'
 import SourceIcon from '../SourceIcon'
+import EmbedVideo from '../EmbedVideo'
 import ThumbnailImg from '../ThumbnailImg'
 
 const FeedItem = ({ data, className }) => {
-  const { body, source, title, timeCreated, thumbnail } = data
+  const { body, source, title, timeCreated, thumbnail, id } = data
   return (
     <div className={className}>
       <div className='left-side'>
-        <ThumbnailImg imgSource={thumbnail} />
+        {source === 'youtube' ? (
+          <EmbedVideo videoId={id} />
+        ) : (
+          <ThumbnailImg imgSource={thumbnail} />
+        )}
       </div>
       <div className='right-side'>
         <div className='top-row'>
@@ -27,7 +32,7 @@ const FeedItem = ({ data, className }) => {
 }
 
 const StyledFeedItem = styled(FeedItem)`
-  height: 130px;
+  height: 140px;
   width: 100%;
   display: inline-grid;
   grid-template-columns: 25% 75%;

@@ -31,7 +31,7 @@ const getUploads = async () => {
     .catch((err) => console.log(err))
   return uploads.items.map(vid => {
       return {
-        id: vid.id,
+        id: vid.snippet.resourceId.videoId,
         title: vid.snippet.title,
         body: vid.snippet.description,
         timeCreated: vid.snippet.publishedAt,
