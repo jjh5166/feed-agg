@@ -3,12 +3,15 @@ import styled from 'styled-components'
 
 import TimeStamp from '../TimeStamp'
 import SourceIcon from '../SourceIcon'
+import ThumbnailImg from '../ThumbnailImg'
 
 const FeedItem = ({ data, className }) => {
-  const { body, source, title, timeCreated } = data
+  const { body, source, title, timeCreated, thumbnail } = data
   return (
     <div className={className}>
-      <div className='left-side'></div>
+      <div className='left-side'>
+        <ThumbnailImg source={thumbnail} />
+      </div>
       <div className='right-side'>
         <div className='top-row'>
           <div className='post-title'>{title}</div>
@@ -26,7 +29,6 @@ const FeedItem = ({ data, className }) => {
 const StyledFeedItem = styled(FeedItem)`
   height: 130px;
   width: 100%;
-  outline: solid blue 2px;
   display: inline-grid;
   grid-template-columns: 25% 75%;
   overflow: hidden;
