@@ -27,13 +27,15 @@ const App = ({ className }) => {
       })
   }, [])
 
-  console.log(data)
   return (
     <div className={className}>
-      <div className='feed'>
-        {data &&
-          !!data.length &&
-          data.map((item, i) => <FeedItem key={i} data={item} />)}
+      <div className='title'>Framstore Social Feed</div>
+      <div className='feed-container'>
+        <div className='feed'>
+          {data &&
+            !!data.length &&
+            data.map((item, i) => <FeedItem key={i} data={item} />)}
+        </div>
       </div>
     </div>
   )
@@ -42,10 +44,21 @@ const App = ({ className }) => {
 const StyledApp = styled(App)`
   height: 100vh;
   display: flex;
-  justify-content: center;
-  padding: 25px 0;
-  div.feed {
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  div.title {
+    height: 10%;
+    font-size: 3em;
+  }
+  div.feed-container {
+    height: 90%;
     width: 75%;
+    padding: 5px 0;
+  }
+  div.feed {
+    max-height: 99%;
+    overflow-y: scroll;
   }
 `
 export default StyledApp
