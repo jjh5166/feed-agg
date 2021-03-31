@@ -4,11 +4,11 @@ import styled from 'styled-components'
 function showLogo(source){
   switch (source) {
     case 'twitter':
-      return '/twitterLogo.png'
+      return 'twitterLogo.png'
     case 'youtube':
       return 'youtubeLogo.png'
     default:
-      return '/logo192.png'
+      return 'logo192.png'
   }
 }
 

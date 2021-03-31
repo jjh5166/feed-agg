@@ -1,18 +1,23 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const ThumbnailImg = ({ className, source }) => {
+const ThumbnailImg = ({ className, imgSource }) => {
   return (
     <div className={className}>
-      <img src={source} alt='thumbnail' />
+      <img src={imgSource} alt='thumbnail' />
     </div>
   )
 }
 
 const StyledThumbnailImg = styled(ThumbnailImg)`
   height: 128px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   img {
     height: 100%;
+    width: 100%;
+    object-fit: cover;
   }
 `
 

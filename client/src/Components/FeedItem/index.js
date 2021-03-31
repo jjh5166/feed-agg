@@ -10,7 +10,7 @@ const FeedItem = ({ data, className }) => {
   return (
     <div className={className}>
       <div className='left-side'>
-        <ThumbnailImg source={thumbnail} />
+        <ThumbnailImg imgSource={thumbnail} />
       </div>
       <div className='right-side'>
         <div className='top-row'>
@@ -37,6 +37,7 @@ const StyledFeedItem = styled(FeedItem)`
   div.right-side {
     display: flex;
     flex-direction: column;
+    margin-left: 17px;
   }
   div.top-row {
     display: grid;
