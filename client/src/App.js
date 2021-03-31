@@ -6,7 +6,11 @@ import FeedItem from './Components/FeedItem'
 const App = ({ className }) => {
   const [data, setData] = useState([])
   const updateData = (newData) => {
-    setData((prevData) => [...prevData, ...newData])
+    setData((prevData) =>
+      [...prevData, ...newData].sort(function (a, b) {
+        return new Date(b.timeCreated) - new Date(a.timeCreated)
+      })
+    )
   }
   useEffect(() => {
     fetch('/api/twitter')
