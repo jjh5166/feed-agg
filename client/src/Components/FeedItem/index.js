@@ -5,18 +5,18 @@ import TimeStamp from '../TimeStamp'
 import SourceIcon from '../SourceIcon'
 
 const FeedItem = ({ data, className }) => {
-  const { text, source, username, created_at } = data
+  const { body, source, title, timeCreated } = data
   return (
     <div className={className}>
       <div className='left-side'></div>
       <div className='right-side'>
         <div className='top-row'>
-          <div className='post-title'>{`@${username}`}</div>
-          <TimeStamp time={created_at} />
+          <div className='post-title'>{title}</div>
+          <TimeStamp time={timeCreated} />
           <SourceIcon source={source} />
         </div>
         <div className='bottom-row'>
-          <p>{text}</p>
+          <p>{body}</p>
         </div>
       </div>
     </div>

@@ -10,8 +10,18 @@ const getTweets = async () => {
     })
     .then((res) => res.data)
     .catch((err) => console.log(err))
-  tweets.data.forEach((el) => (el.source = 'twitter', el.username = tweets.includes.users[0].username))
-  return tweets.data
+  return tweets.data.map(tweet => {
+    return {
+      id: tweet.id,
+      title: `@${tweets.includes.users[0].username}`, //set title to twitter handle
+      body: tweet.text,
+      timeCreated: tweet.created_at,
+      thumbnail: null, //need to retrieve media object from twitter api
+      source: 'twitter', // source determines which logo to show
+    }
+  })
 }
 
-exports.getTweets = getTweets
+module.exports = {
+  getTweets: getTweets,
+}

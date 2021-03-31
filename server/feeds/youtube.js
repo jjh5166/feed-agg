@@ -29,7 +29,16 @@ const getUploads = async () => {
     })
     .then((res) => res.data)
     .catch((err) => console.log(err))
-  return uploads.items
+  return uploads.items.map(vid => {
+      return {
+        id: vid.id,
+        title: vid.snippet.title,
+        body: vid.snippet.description,
+        timeCreated: vid.snippet.publishedAt,
+        thumbnail: vid.snippet.thumbnails.medium.url,
+        source: 'youtube', // source determines which logo to show
+      }
+  })
 }
 
 module.exports = {
