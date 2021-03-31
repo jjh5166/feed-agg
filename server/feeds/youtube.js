@@ -24,7 +24,7 @@ const getUploads = async () => {
         key: process.env.youtubeApiKey,
         playlistId: uploadsId,
         part: 'snippet',
-        maxResults: 20
+        maxResults: 10
       },
     })
     .then((res) => res.data)
