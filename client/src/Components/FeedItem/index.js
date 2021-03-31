@@ -16,7 +16,7 @@ const FeedItem = ({ data, className }) => {
           <SourceIcon source={source} />
         </div>
         <div className='bottom-row'>
-          <p>{body}</p>
+          <div>{body}</div>
         </div>
       </div>
     </div>
@@ -37,19 +37,25 @@ const StyledFeedItem = styled(FeedItem)`
     flex-direction: column;
   }
   div.top-row {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 10px;
+    display: grid;
+    grid-template-columns: 70% 20% 10%;
+    margin-right: 10px;
   }
   div.bottom-row {
-    p {
-      margin: 6px;
-    }
+    font-size: 0.75em;
+    overflow-y: scroll;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   div.post-title {
     flex: 3;
-    font-size: 1.5em;
+    font-size: 1em;
     font-weight: 500;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 `
 export default StyledFeedItem

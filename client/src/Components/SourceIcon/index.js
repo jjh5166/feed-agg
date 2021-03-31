@@ -27,7 +27,6 @@ const StyledSourceIcon = styled(SourceIcon)`
   div.img-container {
     border-radius: 30px;
     height: 20px;
-    width: 20px;
     float: right;
   }
   img.source-logo {
