@@ -35,7 +35,7 @@ const getUploads = async () => {
         title: vid.snippet.title,
         body: vid.snippet.description,
         timeCreated: vid.snippet.publishedAt,
-        thumbnail: vid.snippet.thumbnails.medium.url,
+        thumbnail: vid.snippet.thumbnails.default.url,
         source: 'youtube', // source determines which logo to show
       }
   })
