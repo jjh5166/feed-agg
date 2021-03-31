@@ -8,6 +8,8 @@ import ThumbnailImg from '../ThumbnailImg'
 
 const FeedItem = ({ data, className }) => {
   const { body, source, title, timeCreated, thumbnail, id } = data
+  const linkAddress =
+    source === 'twitter' ? `https://twitter.com/Framestore/status/${id}` : '#'
   return (
     <div className={className}>
       <div className='left-side'>
@@ -24,7 +26,17 @@ const FeedItem = ({ data, className }) => {
           <SourceIcon source={source} />
         </div>
         <div className='bottom-row'>
-          <div>{body}</div>
+          <a
+            href={linkAddress}
+            target='_blank'
+            rel='noreferrer'
+            style={{
+              color: 'inherit',
+              textDecoration: 'inherit',
+            }}
+          >
+            <div>{body}</div>
+          </a>
         </div>
       </div>
     </div>
